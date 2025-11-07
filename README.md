@@ -39,6 +39,18 @@ I'm afraid of what will happen;fear
 
 ## 💡 Próximos pasos
 
-Integrar embeddings preentrenados (GloVe)
-Añadir interfaz gráfica sencilla
-Experimentar con modelos tipo BERT
+- Integrar embeddings preentrenados (GloVe)
+- Añadir interfaz gráfica sencilla
+- Experimentar con modelos tipo BERT
+
+📘 Documentación técnica
+
+Todos los experimentos, entrenamientos y evaluaciones se encuentran documentados en el notebook emotions_NLP_classification.ipynb, incluyendo:
+
+- Gráficas de accuracy y loss durante el entrenamiento
+- Reportes de clasificación y matrices de confusión
+- Comparativa entre el modelo base y el modelo mejorado
+
+El código está comentado paso a paso para facilitar su comprensión y replicación.
+
+🔗 [Abrir en Google Colab](https://colab.research.google.com/github/PaulPark2022/Emotions-NLP-Classification-A01709885/blob/main/emotions_NLP_classification.ipynb)
