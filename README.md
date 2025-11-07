@@ -44,7 +44,7 @@ I'm afraid of what will happen;fear
 - Añadir interfaz gráfica sencilla
 - Experimentar con modelos tipo BERT
 
-📘 Documentación técnica
+## 📘 Documentación técnica
 
 Todos los experimentos, entrenamientos y evaluaciones se encuentran documentados en el notebook emotions_NLP_classification.ipynb, incluyendo:
 
