@@ -26,6 +26,7 @@ El modelo demuestra capacidad para capturar emociones de texto con alta precisiÃ
 ```python
 predict_emotion("I feel so happy today!")  # joy
 predict_emotion("I'm scared of what might happen next.")  # fear
+```
 
 ## ðŸ“Š Dataset
 train.txt, val.txt, test.txt
