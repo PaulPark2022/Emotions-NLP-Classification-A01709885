@@ -29,9 +29,8 @@ predict_emotion("I'm scared of what might happen next.")  # fear
 ```
 
 ## 📊 Dataset
-train.txt, val.txt, test.txt
-
-Cada línea: texto;etiqueta
+Archivos: train.txt, val.txt, test.txt
+Cada línea contiene una oración y su etiqueta, separadas por punto y coma:
 
 Ejemplo:
 
@@ -45,6 +44,9 @@ I'm afraid of what will happen;fear
 - Experimentar con modelos tipo BERT
 
 ## 📘 Documentación técnica
+
+📄 El archivo principal emotions_NLP_classification.ipynb contiene el flujo completo del proyecto:
+desde la carga de datos hasta la evaluación de modelos y predicciones.
 
 Todos los experimentos, entrenamientos y evaluaciones se encuentran documentados en el notebook emotions_NLP_classification.ipynb, incluyendo:
 
