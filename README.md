@@ -1,59 +1,83 @@
-# Emotions NLP Classification 🎭
+# EMOTIONS NLP CLASSIFICATION
 
 **Autor:** Paul Park (A01709885)  
-**Curso:** Inteligencia artificial avanzada para la ciencia de datos II 
 **Fecha:** 7 de noviembre de 2025  
 
-## 📖 Descripción
-Implementación de un modelo de *deep learning* para la **clasificación de emociones en texto**, usando una red **LSTM bidireccional** entrenada en un dataset real con seis emociones: *joy, sadness, anger, fear, love y surprise*.
+## 🧠 Descripción general
+Este proyecto implementa un modelo de *deep learning* para la **clasificación de emociones en texto**, aplicando una arquitectura de **red LSTM bidireccional** en TensorFlow/Keras.  
 
-## ⚙️ Framework y técnicas
-- TensorFlow / Keras  
-- Embedding de 10,000 palabras  
-- LSTM Bidireccional  
-- Dropout y EarlyStopping  
-- Comparación entre modelo base y modelo mejorado  
+El objetivo es que el modelo identifique la emoción dominante en una oración en inglés, entre seis posibles categorías:
+**joy, sadness, anger, fear, love, surprise**.
 
-## 🧠 Resultados
-| Modelo | Test Accuracy | Observaciones |
-|--------|----------------|----------------|
-| Base | 0.90 | Buen equilibrio entre bias y varianza |
-| Mejorado | 0.90 | Mayor estabilidad y menor val_loss |
+---
 
-El modelo demuestra capacidad para capturar emociones de texto con alta precisión.
+## 📂 Estructura del repositorio
+| Archivo | Descripción |
+|----------|--------------|
+| `Emotions_Training.ipynb` | Entrena el modelo desde cero. Descarga el dataset, preprocesa, entrena, evalúa y guarda el modelo entrenado. |
+| `Emotions_Prediction.ipynb` | Carga el modelo ya entrenado y permite hacer predicciones inmediatas sobre nuevos textos. |
+| `train.txt`, `val.txt`, `test.txt` | Archivos de datos con frases y sus etiquetas emocionales separadas por punto y coma. |
+| `emotion_model.h5` | Modelo LSTM bidireccional entrenado y guardado. |
+| `tokenizer.pkl`, `label_encoder.pkl` | Objetos serializados necesarios para el preprocesamiento y decodificación. |
 
-## 🧪 Ejemplo de uso
-```python
-predict_emotion("I feel so happy today!")  # joy
-predict_emotion("I'm scared of what might happen next.")  # fear
-```
+---
 
-## 📊 Dataset
-Archivos: train.txt, val.txt, test.txt
-Cada línea contiene una oración y su etiqueta, separadas por punto y coma:
+## 🧩 Arquitectura de la red
+- **Capa de Embedding** (dimensión 128)
+- **LSTM bidireccional** (128 unidades)
+- **Dropout** (0.6 y 0.4 para regularización)
+- **Capa densa** (64 unidades ReLU)
+- **Capa de salida Softmax** (6 clases)
+- **Optimizador:** Adam  
+- **Pérdida:** Sparse Categorical Crossentropy  
+- **Métrica:** Accuracy
 
-Ejemplo:
+---
 
-I am so happy today;joy
-I'm afraid of what will happen;fear
+## 🚀 Resultados
+- Precisión en el conjunto de prueba: **≈ 90 %**
+- Buen equilibrio entre *accuracy* y *loss*  
+- Las clases más fácilmente distinguibles fueron **joy** y **sadness**.  
+- Clases con mayor confusión: **love** y **surprise**, debido a su ambigüedad semántica.
 
-## 💡 Próximos pasos
+---
 
-- Integrar embeddings preentrenados (GloVe)
-- Añadir interfaz gráfica sencilla
-- Experimentar con modelos tipo BERT
+## ⚙️ Instrucciones de uso
 
-## 📘 Documentación técnica
+### 🧠 Entrenamiento (opcional)
+Si deseas volver a entrenar el modelo desde cero:
+1. Abre `Emotions_Training.ipynb` en Google Colab.  
+2. Ejecuta todas las celdas (toma ~15 minutos).  
+3. Se generarán los archivos:
+   - `emotion_model.h5`
+   - `tokenizer.pkl`
+   - `label_encoder.pkl`
 
-📄 El archivo principal emotions_NLP_classification.ipynb contiene el flujo completo del proyecto:
-desde la carga de datos hasta la evaluación de modelos y predicciones.
+### ⚡ Predicción (demostración rápida)
+1. Abre `Emotions_Prediction.ipynb`.  
+2. Asegúrate de tener los archivos `.h5` y `.pkl` en la misma carpeta.  
+3. Ejecuta todo el notebook.  
+4. Prueba con tus propias frases:
+   ```python
+   predict_emotion("I'm feeling nervous about tomorrow.")
 
-Todos los experimentos, entrenamientos y evaluaciones se encuentran documentados en el notebook emotions_NLP_classification.ipynb, incluyendo:
+## 🧾 Documentación técnica
 
-- Gráficas de accuracy y loss durante el entrenamiento
-- Reportes de clasificación y matrices de confusión
-- Comparativa entre el modelo base y el modelo mejorado
+Los experimentos y métricas de desempeño (curvas de accuracy/loss y reportes de clasificación) se encuentran en el notebook
+Emotions_Training.ipynb.
+Muestra tanto los resultados visuales como textuales, junto con una comparación entre el modelo base y el modelo mejorado.
 
-El código está comentado paso a paso para facilitar su comprensión y replicación.
+## 🧩 Mejoras implementadas
 
-🔗 [Abrir en Google Colab](https://colab.research.google.com/github/PaulPark2022/Emotions-NLP-Classification-A01709885/blob/main/emotions_NLP_classification.ipynb)
+- Incremento de dimensión en embeddings (64 → 128)
+- Más unidades LSTM (64 → 128)
+- Nuevas capas de Dropout para regularización
+- Uso de EarlyStopping
+- Separación de entrenamiento y predicción en Colabs distintos para mayor eficiencia
+
+## 🔮 Futuras mejoras
+
+- Uso de embeddings preentrenados (GloVe, Word2Vec)
+- Integración de modelos basados en Transformers (BERT)
+- Expansión del dataset con ejemplos multilingües
+- Despliegue del modelo en una API o interfaz web interactiva
