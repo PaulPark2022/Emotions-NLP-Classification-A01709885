@@ -2,13 +2,13 @@
 
 **Autor:** Paul Park (A01709885)  
 **Curso:** Inteligencia artificial avanzada para la ciencia de datos II  
-**Fecha:** 7 de noviembre de 2025  
+**Fecha:** 9 de noviembre de 2025  
 
 ---
 
 ## 📖 Descripción
 Implementación de un modelo de *Deep Learning* para la **clasificación de emociones en texto**, utilizando una red **LSTM bidireccional** con técnicas de regularización.  
-El proyecto entrena un modelo capaz de identificar la emoción dominante en frases cortas en inglés.
+El modelo identifica la emoción dominante en frases cortas en inglés.
 
 Emociones detectadas:  
 **joy, sadness, anger, fear, love, surprise**
@@ -28,11 +28,10 @@ Emociones detectadas:
 ## 🧠 Resultados
 | Modelo | Test Accuracy | Observaciones |
 |--------|----------------|----------------|
-| Base | 0.90 | Buen desempeño inicial, con curvas estables y sin sobreajuste significativo. |
-| Mejorado | 0.91 | Mejor estabilidad y menor pérdida en validación, gracias al aumento de capacidad y regularización. |
+| Base | 0.90 | Buen desempeño inicial, sin sobreajuste significativo |
+| Mejorado | 0.91 | Mayor estabilidad y menor pérdida en validación |
 
-El modelo mejorado logra un equilibrio sólido entre capacidad y generalización, capturando correctamente el tono emocional de frases cortas.  
-El **EarlyStopping** detuvo el entrenamiento en el *epoch 6* al detectar una ligera pérdida de validación, lo que confirma una buena práctica de optimización.
+El modelo mejorado logra un equilibrio sólido entre capacidad y generalización, capturando correctamente el tono emocional de frases cortas.
 
 ---
 
@@ -64,5 +63,5 @@ El **EarlyStopping** detuvo el entrenamiento en el *epoch 6* al detectar una lig
 
 ## 📘 Referencias
 Dataset original basado en el *Emotions Dataset for NLP Classification Tasks* (Kaggle).  
-Inspirado en los lineamientos del paper *Affect in Tweets* (Mohammad et al., ACL 2018).  
-🔗 https://aclanthology.org/S18-1001.pdf
+Inspirado en *Affect in Tweets* (Mohammad et al., ACL 2018).  
+https://aclanthology.org/S18-1001.pdf
