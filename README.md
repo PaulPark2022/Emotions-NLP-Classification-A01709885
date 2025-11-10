@@ -28,10 +28,11 @@ Emociones detectadas:
 ## 🧠 Resultados
 | Modelo | Test Accuracy | Observaciones |
 |--------|----------------|----------------|
-| Base | 0.88 | Buen desempeño inicial, sin sobreajuste significativo |
-| Mejorado | 0.90 | Mayor estabilidad y menor pérdida en validación |
+| Base | 0.90 | Buen desempeño inicial, con curvas estables y sin sobreajuste significativo. |
+| Mejorado | 0.91 | Mejor estabilidad y menor pérdida en validación, gracias al aumento de capacidad y regularización. |
 
-El modelo mejorado logra un equilibrio sólido entre capacidad y generalización, capturando correctamente el tono emocional de frases cortas.
+El modelo mejorado logra un equilibrio sólido entre capacidad y generalización, capturando correctamente el tono emocional de frases cortas.  
+El **EarlyStopping** detuvo el entrenamiento en el *epoch 6* al detectar una ligera pérdida de validación, lo que confirma una buena práctica de optimización.
 
 ---
 
@@ -63,4 +64,5 @@ El modelo mejorado logra un equilibrio sólido entre capacidad y generalización
 
 ## 📘 Referencias
 Dataset original basado en el *Emotions Dataset for NLP Classification Tasks* (Kaggle).  
-Inspirado en los lineamientos del paper *Affect in Tweets* (Mohammad et al., ACL 2018). https://aclanthology.org/S18-1001.pdf
+Inspirado en los lineamientos del paper *Affect in Tweets* (Mohammad et al., ACL 2018).  
+🔗 https://aclanthology.org/S18-1001.pdf
