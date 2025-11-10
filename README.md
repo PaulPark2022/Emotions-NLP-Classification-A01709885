@@ -63,4 +63,4 @@ El modelo mejorado logra un equilibrio sólido entre capacidad y generalización
 
 ## 📘 Referencias
 Dataset original basado en el *Emotions Dataset for NLP Classification Tasks* (Kaggle).  
-Inspirado en los lineamientos del paper *Affect in Tweets* (Mohammad et al., ACL 2018).
+Inspirado en los lineamientos del paper *Affect in Tweets* (Mohammad et al., ACL 2018). https://aclanthology.org/S18-1001.pdf
